@@ -45,8 +45,10 @@
   </header>
 
   <div class="grid grid--uniform" role="list">
-
-    {% for product in collection.products %}
+  {% if collection.handle == 'best-sellers' %}
+    {% assign limit = 1 %}
+  {% endif %}
+    {% for product in collection.products limit:limit %}
       {% if collection.products.size == 1 %}
         {% assign grid_item_width = 'medium-up--one-third small--one-whole' %}
       {% else %}
