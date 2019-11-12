@@ -53,9 +53,9 @@
   {% if section.blocks.size > 0 %}
     <hr>
   {% endif %}
-
   <div class="grid medium-up--grid--table sub-footer small--text-center">
-    <div class="grid__item medium-up--one-half">
+    <div class="grid__item medium-up--text-center">
+      <div>Partners of MindArc</div>
       <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}. {{ powered_by_link }}</small>
     </div>
     {%- if section.settings.show_payment_icons -%}
