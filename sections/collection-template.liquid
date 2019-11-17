@@ -45,9 +45,8 @@
   </header>
 
   <div class="grid grid--uniform" role="list">
-
-    {% for product in collection.products %}
-      {% if collection.products.size == 1 %}
+-    {% for product in collection.products limit:section.settings.limit_numOf_products %}
+       {% if collection.products.size == 1 %}
         {% assign grid_item_width = 'medium-up--one-third small--one-whole' %}
       {% else %}
         {% assign grid_item_width = 'medium-up--one-third small--one-half' %}
@@ -154,6 +153,22 @@
         "zh-TW": "顯示產品廠商"
       }
     },
+      {
+         "type": "select",
+        "id": "limit_numOf_products",
+        "label": "Limit number of products",
+        "options": [
+          {
+          "value": "4"
+          },
+          {
+            "value": "8"
+          },
+          {
+            "value": "12"
+           }          
+        ]
+      }, 
     {
       "type": "checkbox",
       "id": "collection_sort_enable",
