@@ -103,13 +103,12 @@ $color-overlay-title-text: {{ settings.color_image_overlay_text }};
 $color-image-overlay: {{ settings.color_image_overlay }};
 $opacity-image-overlay: {{ settings.image_overlay_opacity }};
 $transition-link-hover: 0.1s cubic-bezier(0.44, 0.13, 0.48, 0.87);
-
+ 
 /*====== Sizes ======*/
 $width-site: 1280px;
 $gutter: 30px;
 $mobile-icon-line-thickness: 5px;
-
-/*====== Typography ======*/
+ /*====== Typography ======*/
 {%- assign base_font = settings.type_base_font -%}
 {%- assign header_font = settings.type_header_font -%}
 
@@ -1503,8 +1502,18 @@ body,
 html {
   background-color: $color-body;
 }
-
-.site-wrapper {
+.hero-banner {
+  background: var(--image-gradient), var(--image-url) no-repeat center center;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .hero-banner-text{
+    color:white;
+    margin: 20px;
+  }
+ .site-wrapper {
   max-width: $width-site;
   margin: 0 auto;
   padding: 0 ($gutter / 2);

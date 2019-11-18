@@ -1,7 +1,19 @@
 <!-- /templates/collection.liquid -->
 {% paginate collection.products by 12 %}
-
-<div data-section-id="{{ section.id }}" data-section-type="collection-template" data-sort-enabled="{{ section.settings.collection_sort_enable }}" data-tags-enabled="{{ section.settings.collection_tag_enable }}">
+{% if section.settings.hero_banner_mask  %}
+{% assign image-gradient = "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))" %}
+     {% else %}
+     {% assign image-gradient = "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0))" %}
+{% endif %}
+ <div data-section-id="{{ section.id }}" data-section-type="collection-template" data-sort-enabled="{{ section.settings.collection_sort_enable }}" data-tags-enabled="{{ section.settings.collection_tag_enable }}">
+    {% if collection.image %}
+    <div class="hero-banner" 
+    style="
+     --image-url:url({{ collection.image.src | img_url: section.settings.hero_banner_height }});
+     --image-gradient:  {{image-gradient}}; "> 
+   <h1 class="hero-banner-text">{{section.settings.hero_banner_text}}</h1>
+  </div>
+  {% endif %}   
   <header class="grid">
     <h1 class="grid__item small--text-center {% if section.settings.collection_sort_enable or section.settings.collection_tag_enable %}medium-up--one-third{% endif %}">{% if current_tags.size > 0 %}{{ current_tags.first }}{% else %}{{ collection.title }}{% endif %}</h1>
 
@@ -169,6 +181,30 @@
            }          
         ]
       }, 
+      {
+        "type":      "select",
+        "id":        "hero_banner_height",
+        "label":     "Change Banner dimensions(px)",
+        "options": [
+          { "value": "1920x650", "label": "1920x650" },
+          { "value": "1440x450", "label": "1440x450" }
+        ],
+        "default":   "1920x650",
+        "info":      "Banner heigth"
+     }, 
+     {
+      "type": "text",
+     "id": "hero_banner_text",
+     "label": "Banner overlay text",       
+     "info" : "Replace this text with yours",
+     "placeholder": "Type your text here" 
+    },
+    {
+      "type": "checkbox",
+      "id": "hero_banner_mask",
+      "label": "Banner image mask",
+      "default": true
+    },    
     {
       "type": "checkbox",
       "id": "collection_sort_enable",

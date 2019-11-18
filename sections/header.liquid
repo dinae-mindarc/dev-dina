@@ -45,7 +45,11 @@
 {% else %}
   <div class="page-border"></div>
 {% endif %}
-
+<!-- collection {% if collection.image %}{{ collection.image | img_url: 'large' }}{% endif %} -->
+{% if collection.image %}
+<div><img class="collection-banner" src={{ collection.Image.originalSrc("https://img.wallpapersafari.com/desktop/1600/900/47/9/0muixM.jpg") }}></img></div> 
+{% endif %}
+ 
 <div class="site-wrapper">
   <div class="top-bar grid">
 
