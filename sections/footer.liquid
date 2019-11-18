@@ -55,7 +55,7 @@
   {% endif %}
   <div class="grid medium-up--grid--table sub-footer small--text-center">
     <div class="grid__item medium-up--text-center">
-      <small>Partners of MindArc</small>
+      <small>{{section.settings.site_credit}}</small>
     </div>
     {%- if section.settings.show_payment_icons -%}
       {%- unless shop.enabled_payment_types == empty -%}
@@ -101,6 +101,12 @@
   },
   "max_blocks": 4,
   "settings": [
+    {
+      "type": "text",
+      "id": "site_credit",
+      "default": "Partners of MindArc",
+      "label": "Partners of MindArc"
+    },
     {
       "type": "checkbox",
       "id": "show_payment_icons",
