@@ -140,71 +140,81 @@
     "zh-TW": "商品系列頁面"
   },
   "settings": [
+  {
+    "type": "checkbox",
+    "id": "vendor_show",
+    "label": {
+      "da": "Vis produktleverandør",
+      "de": "Produktverkäufer anzeigen",
+      "en": "Show product vendor",
+      "es": "Mostrar proveedor del producto",
+      "fi": "Näytä tuotteen myyjä",
+      "fr": "Afficher le distributeur du produit",
+      "hi": "उत्पाद विक्रेता दिखाएं",
+      "it": "Mostra fornitore prodotto",
+      "ja": "商品の販売元を表示する",
+      "ko": "제품 공급 업체 표시",
+      "ms": "Tunjukkan vendor produk",
+      "nb": "Vis produktleverandør",
+      "nl": "Productleverancier weergeven",
+      "pt-BR": "Exiba o fornecedor do produto",
+      "pt-PT": "Mostrar o fornecedor do produto",
+      "sv": "Visa produktsäljare",
+      "th": "แสดงผู้ขายสินค้า",
+      "zh-CN": "显示产品厂商",
+      "zh-TW": "顯示產品廠商"
+    }
+  }, 
+  {
+    "type":      "header",
+    "content":   "Amount of products to show" 
+  },
     {
-      "type": "checkbox",
-      "id": "vendor_show",
-      "label": {
-        "da": "Vis produktleverandør",
-        "de": "Produktverkäufer anzeigen",
-        "en": "Show product vendor",
-        "es": "Mostrar proveedor del producto",
-        "fi": "Näytä tuotteen myyjä",
-        "fr": "Afficher le distributeur du produit",
-        "hi": "उत्पाद विक्रेता दिखाएं",
-        "it": "Mostra fornitore prodotto",
-        "ja": "商品の販売元を表示する",
-        "ko": "제품 공급 업체 표시",
-        "ms": "Tunjukkan vendor produk",
-        "nb": "Vis produktleverandør",
-        "nl": "Productleverancier weergeven",
-        "pt-BR": "Exiba o fornecedor do produto",
-        "pt-PT": "Mostrar o fornecedor do produto",
-        "sv": "Visa produktsäljare",
-        "th": "แสดงผู้ขายสินค้า",
-        "zh-CN": "显示产品厂商",
-        "zh-TW": "顯示產品廠商"
-      }
+       "type": "select",
+      "id": "limit_numOf_products",
+      "label": "Limit number of products",
+      "options": [
+        {
+        "value": "4"
+        },
+        {
+          "value": "8"
+        },
+        {
+          "value": "12"
+         }          
+      ]
+    }, 
+    {
+      "type":      "header",
+      "content":   "Banner settings" 
     },
-      {
-         "type": "select",
-        "id": "limit_numOf_products",
-        "label": "Limit number of products",
-        "options": [
-          {
-          "value": "4"
-          },
-          {
-            "value": "8"
-          },
-          {
-            "value": "12"
-           }          
-        ]
-      }, 
-      {
-        "type":      "select",
-        "id":        "hero_banner_height",
-        "label":     "Change Banner dimensions(px)",
-        "options": [
-          { "value": "1920x650", "label": "1920x650" },
-          { "value": "1440x450", "label": "1440x450" }
-        ],
-        "default":   "1920x650",
-        "info":      "Banner heigth"
-     }, 
-     {
-      "type": "text",
-     "id": "hero_banner_text",
-     "label": "Banner overlay text",       
-     "info" : "Replace this text with yours",
+    {
+      "type":      "select",
+      "id":        "hero_banner_height",
+      "label":     "Set banner dimensions(px)",
+      "options": [
+        { "value": "1920x650", "label": "1920x650" },
+        { "value": "1440x450", "label": "1440x450" }
+      ],
+      "default":   "1920x650"
+   }, 
+   {
+    "type": "text",
+    "id": "hero_banner_text",
+    "label": "Set banner text",       
      "placeholder": "Type your text here" 
-    },
+  },
+  {
+    "type": "checkbox",
+    "id": "hero_banner_mask",
+    "label": "Set banner mask",
+    "default": true
+  },  
     {
-      "type": "checkbox",
-      "id": "hero_banner_mask",
-      "label": "Banner image mask",
-      "default": true
-    },    
+      "type":      "header",
+      "content":   "Collection sorting and filtering" 
+    },
     {
       "type": "checkbox",
       "id": "collection_sort_enable",
